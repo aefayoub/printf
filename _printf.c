@@ -6,9 +6,14 @@
  */
 int _printf(const char * const format, ...)
 {
+int i = 0;
 va_list num;
-int i = 0, leng = 0;
-va_start(args, format);
+len = 0;
+convert_match match[] = {
+{"%s", pfunction_string}, {"%c", pfunction_char}, {"%i", pfunction_int},
+{"%d", pfunction_int}, {"%b", pfunction_bin},
+};
+va_start(num, format);
 if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 while (format[i] != '\0')
@@ -16,45 +21,31 @@ while (format[i] != '\0')
 if (format[i] == '%')
 {
 i++;
-switch (format[i])
+int j = 0;
+while (j < sizeof(match) / sizeof(match[0]))
 {
-case 'i':
-case 'd':
+if (format[i] == match[j].id[1])
 {
-int n = va_arg(num, int);
-leng = leng +  pfunction_int(num);
+len += match[j].f(num);
 break;
 }
-case 's':
+j++;
+}
+if (j == sizeof(match) / sizeof(match[0]))
 {
-char *str = va_arg(num, char *);
-leng = leng + pfunction_string(num);
-break;
-}
-case 'c':
-{
-char c = va_arg(num, int);
-leng = leng + pfunction_char(num);
-break;
-}
-unsigned int n = va_arg(num, unsigned int);
-leng = leng + pfunction_bin(num);
-break;
-}
-default:
 _putchar('%');
 _putchar(format[i]);
-leng += 2;
-break;
+len += 2;
 }
 }
 else
 {
 _putchar(format[i]);
-leng++;
+len++;
 }
 i++;
 }
+}
 va_end(num);
-return (leng);
+return (len);
 }
