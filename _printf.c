@@ -37,6 +37,9 @@ char c = va_arg(args, int);
 leng = leng + pfunction_char(args);
 break;
 }
+unsigned int n = va_arg(args, unsigned int);
+leng = leng + pfunction_bin(args);
+break;
 }
 default:
 _putchar('%');
