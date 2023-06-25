@@ -2,17 +2,17 @@
 
 /**
  * pfuntion_char - Print a character
- * @values: List of arguments
+ * @args: List of arguments
  * Return: Number of characters printed
  */
 int pfunction_char(va_list args)
 {
-    int c = va_arg(values, int);
+    int c = va_arg(args, int);
     return (_putchar(c));
 }
 /**
  * pfunctionstring - Print a string
- * @values: List of arguments
+ * @args: List of arguments
  * Return: Number of characters printed
  */
 int pfunction_str(va_list args)
