@@ -5,6 +5,8 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
+int pfunction_str(va_list args)
+int pfunction_char(va_list args)
 int pfunction_int(va_list args);
 int pfunction_dec(va_list args);
 int _putchar(char c);
