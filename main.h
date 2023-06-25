@@ -5,10 +5,14 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-int pfunction_bin(va_list args);
-int pfunction_str(va_list args);
-int pfunction_char(va_list args);
-int pfunction_int(va_list args);
-int pfunction_dec(va_list args);
+int pfunction_hexupc(va_list num);
+int pfunction_hexlc(va_list num);
+int pfunction_oct(va_list num);
+int pfunction_unsi(va_list num);
+int pfunction_bin(va_list num);
+int pfunction_str(va_list num);
+int pfunction_char(va_list num);
+int pfunction_int(va_list num);
+int pfunction_dec(va_list num);
 int _putchar(char c);
 #endif
