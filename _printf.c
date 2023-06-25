@@ -33,7 +33,7 @@ break;
 }
 case 'c':
 {
-char ch = va_arg(args, int);
+char c = va_arg(args, int);
 leng = leng + pfunction_char(args);
 break;
 }
