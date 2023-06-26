@@ -1,44 +1,47 @@
 #include "main.h"
+#include <unistd.h>
 /**
- * _printf - is a function that selects the correct function to print.
- * @format: identifier to look for.
- * Return: the length of the string.
+ * _printf - Emulate the original.
+ *
+ * @format: Format by specifier.
+ *
+ * Return: count of chars.
  */
-int _printf(const char * const format, ...)
+int _printf(const char *format, ...)
 {
-	int i = 0;
-	int len = 0;
-	va_list num;
+	int i = 0, count = 0, count_fun;
+	va_list args;
 
-	convertion match[] = {
-		{"%s", pfunction_string}, {"%c", pfunction_char}, {"%i", pfunction_int},
-		{"%d", pfunction_int}, {"%b", pfunction_bin},
-};
-va_start(num, format);
-while (format[i] != format[i])
-{
-	if (format[i] == '%')
+	va_start(args, format);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	while (format[i])
 	{
-		i++;
-		int j = 0;
-
-		while (j < sizeof(match) / sizeof(match[0]))
+		count_fun = 0;
+		if (format[i] == '%')
 		{
-			if (format[i] == match[j].identif[1])
+			if (!format[i + 1] || (format[i + 1] == ' ' && !format[i + 2]))
 			{
-				len += match[j].fun(num);
+				count = -1;
 				break;
 			}
-			j++;
+			count_fun += get_function(format[i + 1], args);
+			if (count_fun == 0)
+				count += _putchar(format[i + 1]);
+			if (count_fun == -1)
+				count = -1;
+			i++;
 		}
-		if (j == sizeof(match) / sizeof(match[0]))
-			len += _putchar('%') + _putchar(format[i]);
+		else
+		{
+			(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
+		}
+		i++;
+		if (count != -1)
+			count += count_fun;
 	}
-	else
-	leng += _putchar(format[i]);
-	i++;
-}
-}
-va_end(num);
-return (len);
+	va_end(args);
+	return (count);
 }

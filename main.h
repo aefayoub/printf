@@ -1,29 +1,30 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <limits.h>
-#include <unistd.h>
+
+
 /**
- * struct - structure to match conversion.
- * @identif: specifier from the char*.
- * @fun: ptr to specifier of the match.
+ * struct format - Struct for format
+ * @specifiers: Struct format
+ * @f: The function associated
  */
-typedef struct{
-	int (*fun)(va_list num);
-	const char *identif;
-}
-convertion;
-int pfunction_hexupc(va_list num);
-int pfunction_hexlc(va_list num);
-int pfunction_oct(va_list num);
-int pfunction_unsi(va_list num);
-int pfunction_bin(va_list num);
-int pfunction_str(va_list num);
-int pfunction_char(va_list num);
-int pfunction_int(va_list num);
-int pfunction_dec(va_list num);
+
+typedef struct specifiers
+{
+	char specifiers;
+	int (*fun)(va_list);
+} specifiers_t;
+
+/*prototypes*/
+int _printf(const char *format, ...);
+int get_function(char s, va_list args);
 int _putchar(char c);
-int _printf(const char * const format, ...)
+
+/*Conversion specifiers*/
+int pfunction_char(va_list args);
+int pfunction_str(va_list args);
+
 #endif
