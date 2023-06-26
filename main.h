@@ -10,7 +10,7 @@
  * @identif: specifier from the char*.
  * @fun: ptr to specifier of the match.
  */
-struct{
+typedef struct{
 	int (*fun)(va_list num);
 	const char *identif;
 }
