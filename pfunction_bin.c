@@ -14,7 +14,7 @@ int pfunction_bin(va_list num)
 	for (i = 31; i >= 0; i--)
 	{
 		b = (val >> i) & 1;
-		_putchar(b + '0');
+		putchar(b + '0');
 		len++;
 	}
 	return (len);

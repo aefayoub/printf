@@ -16,13 +16,13 @@ int pfunction_int(va_list num)
 
 	if (n < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		n = -n;
 		i++;
 	}
 	if (n == 0)
 	{
-		_putchar('0');
+		putchar('0');
 		return (i + 1);
 	}
 	int val[10];
@@ -34,7 +34,7 @@ int pfunction_int(va_list num)
 		n = n / 10;
 		for (int x = last - 1; x >= 0; x--)
 		{
-			_putchar(val[i] + '0');
+			putchar(val[i] + '0');
 			i++;
 		}
 		return (i);

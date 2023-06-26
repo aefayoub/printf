@@ -8,5 +8,5 @@ int pfunction_char(va_list num)
 {
 	int c = va_arg(args, int);
 
-	return (_putchar(c));
+	return (putchar(c));
 }

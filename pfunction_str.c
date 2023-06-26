@@ -13,7 +13,7 @@ int pfunction_str(va_list num)
 		str = "(null)";
 	for (int i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		putchar(str[i]);
 		len++;
 	}
 	return (len);

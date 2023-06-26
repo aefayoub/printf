@@ -24,5 +24,5 @@ int pfunction_str(va_list num);
 int pfunction_char(va_list num);
 int pfunction_int(va_list num);
 int pfunction_dec(va_list num);
-int _putchar(char c);
+int putchar(char c);
 #endif

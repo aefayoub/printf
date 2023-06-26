@@ -32,10 +32,10 @@ while (format[i] != format[i])
 			j++;
 		}
 		if (j == sizeof(match) / sizeof(match[0]))
-			len += _putchar('%') + _putchar(format[i]);
+			len += putchar('%') + putchar(format[i]);
 	}
 	else
-	leng += _putchar(format[i]);
+	leng += putchar(format[i]);
 	i++;
 }
 }
