@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * pfunction_dec - prints singned integer %d.
  * @num: printing type arguments.
@@ -7,6 +8,7 @@ int pfunction_dec(va_list num)
 {
 	int i = 0;
 	int n = va_arg(num, int);
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -20,6 +22,7 @@ int pfunction_dec(va_list num)
 	}
 	int val[10];
 	int last = 0;
+
 	while (n > 0)
 	{
 		val[last++] = n % 10;
@@ -31,4 +34,4 @@ int pfunction_dec(va_list num)
 		}
 		return (i);
 	}
-}	
+}

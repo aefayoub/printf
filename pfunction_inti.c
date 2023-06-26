@@ -13,6 +13,7 @@ int pfunction_int(va_list num)
 {
 	int i = 0;
 	int n = va_arg(num, int);
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -26,6 +27,7 @@ int pfunction_int(va_list num)
 	}
 	int val[10];
 	int last = 0;
+
 	while (n > 0)
 	{
 		val[last++] = n % 10;
