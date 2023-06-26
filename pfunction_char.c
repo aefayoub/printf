@@ -6,7 +6,12 @@
  */
 int pfunction_char(va_list num)
 {
-	int c = va_arg(args, int);
+	char c = va_arg(args, int);
+	_putchar(c);
+	return (1);
 
+<<<<<<< HEAD
 	return (putchar(c));
+=======
+>>>>>>> da5e9613277480e4575df23b3f70172c3c76bea6
 }
