@@ -38,18 +38,6 @@ int _printf(const char *format, ...)
 		{
 			(count == -1) ? (_putchar(format[i])) : (count += _putchar(format[i]));
 		}
-<<<<<<< HEAD
-		if (j == sizeof(match) / sizeof(match[0]))
-			len += putchar('%') + putchar(format[i]);
-	}
-	else
-	leng += putchar(format[i]);
-	i++;
-}
-}
-va_end(num);
-return (len);
-=======
 		i++;
 		if (count != -1)
 			count += count_fun;
