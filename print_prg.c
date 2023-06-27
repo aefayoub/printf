@@ -1,35 +1,16 @@
-#include "main.h"
+#include <stdio.h>
+
 /**
+ * print_prg - Writes the character '%' to the buffer.
+ * @a: Unused argument (to match the function pointer signature).
+ * @buf: Buffer pointer.
+ * @i: Index for buffer pointer.
  *
- *
- *
+ * Return: Always returns 1.
  */
-int pfunction_oct(va_list args)
+int print_prg(va_list a __attribute__((unused)), char *buf, unsigned int i)
 {
-	unsigned int n = va_arg(args, unsigned int);
-	int i = 0;
-	unsigned int num = n;
-	int *arr;
-	int count = 0;
+	handl_buf(buf, '%', i);
 
-	while (n != 0)
-	{
-		n = n / 8;
-		count++;
-	}
-
-	array = malloc(count * sizeof(int));
-
-	for (i = 0; i < count; i++)
-	{
-		array[i] = num % 8;
-		num = num / 8;
-	}
-
-	for (i = count - 1; i >= 0; i--)
-	{
-		_putchar(arr[i] + '0');
-	}
-	free(arr);
-	return (count);
+	return (1);
 }

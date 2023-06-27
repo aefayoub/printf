@@ -1,10 +1,12 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * pfunction_char - Print a character
- * @num: List of arguments
- * Return: Number of characters printed
+ * print_chr - Prints a character.
+ * @arguments: The argument list containing the character to print.
+ * @buf: The buffer pointer.
+ * @ibuf: The index for the buffer pointer.
+ *
+ * Return: The number of characters printed (always 1).
  */
 int print_chr(va_list arguments, char *buf, unsigned int ibuf)
 {
@@ -14,9 +16,4 @@ int print_chr(va_list arguments, char *buf, unsigned int ibuf)
 	handl_buf(buf, c, ibuf);
 
 	return (1);
-
-<<<<<<< HEAD
-	return (putchar(c));
-=======
->>>>>>> da5e9613277480e4575df23b3f70172c3c76bea6
 }

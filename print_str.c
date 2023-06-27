@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_str - writes the string to stdout
  * @arguments: input string
@@ -23,5 +22,4 @@ int print_str(va_list arguments, char *buf, unsigned int ibuf)
 	for (i = 0; str[i]; i++)
 		ibuf = handl_buf(buf, str[i], ibuf);
 	return (i);
-}	
 }

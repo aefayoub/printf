@@ -10,7 +10,7 @@ int print_bnr(va_list arguments, char *buf, unsigned int ibuf)
 {
 	int int_input, count, i, first_one, isnegative;
 	char *binary;
-	
+
 	int_input = va_arg(arguments, int);
 	isnegative = 0;
 	if (int_input == 0)

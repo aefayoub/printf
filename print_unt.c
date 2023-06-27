@@ -9,7 +9,7 @@
 int print_unt(va_list arguments, char *buf, unsigned int ibuf)
 {
 	unsigned int int_in, int_temp, i, div;
-	
+
 	int_in = va_arg(arguments, unsigned int);
 	int_temp = int_in;
 	div = 1;
