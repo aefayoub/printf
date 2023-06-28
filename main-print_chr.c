@@ -10,16 +10,11 @@
 
 int main(void)
 {
-	char buf[100]; // Buffer to store the characters
-    unsigned int ibuf = 0; // Index for the buffer
-    int num_characters = 0; // Number of characters printed
+	char buf[100];
+	unsigned int ibuf = 0;
+	int num_characters = 0;
 
-    char c = 'A'; // Example character to print
-    num_characters += print_buf(buf, ibuf, c);
-
-    // Call other print functions if needed and update num_characters accordingly
-
-    printf("Number of characters printed: %d\n", num_characters);
-
-    return 0;
+	num_characters += print_buf(buf, ibuf);
+	printf("Number of characters printed: %d\n", num_characters);
+	return (0);
  }
