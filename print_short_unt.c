@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * prinhunt - Prints a short unsigned integer.
- * @arguments: The number to print.
+ * prinhupx - Prints a short decimal number in hexadecimal representation.
+ * @arguments: The input number.
  * @buf: The buffer pointer.
  * @ibuf: The index for the buffer pointer.
  *
@@ -12,6 +12,7 @@ int prinhunt(va_list arguments, char *buf, unsigned int ibuf)
 	unsigned short int int_in, int_temp, i, div;
 
 	int_in = va_arg(arguments, unsigned int);
+
 	int_temp = int_in;
 	div = 1;
 
@@ -25,6 +26,5 @@ int prinhunt(va_list arguments, char *buf, unsigned int ibuf)
 	{
 		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
 	}
-
 	return (i);
 }

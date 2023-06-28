@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- * prinhupx - Prints a short decimal number in hexadecimal representation.
- * @arguments: The input number.
- * @buf: The buffer pointer.
- * @ibuf: The index for the buffer pointer.
- *
- * Return: The number of characters printed.
+ * prinhupx - prints a short decimal in hexadecimal
+ * @arguments: The character to print
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed
  */
 int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 {
@@ -20,7 +19,6 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 		ibuf = handl_buf(buf, '0', ibuf);
 		return (1);
 	}
-
 	if (int_input < 0)
 	{
 		int_input = (int_input * -1) - 1;
@@ -29,7 +27,6 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 
 	binary = malloc(sizeof(char) * (16 + 1));
 	binary = fill_binary_array(binary, int_input, isnegative, 16);
-
 	hexadecimal = malloc(sizeof(char) * (4 + 1));
 	hexadecimal = fill_hex_array(binary, hexadecimal, 1, 4);
 
@@ -37,7 +34,6 @@ int prinhupx(va_list arguments, char *buf, unsigned int ibuf)
 	{
 		if (hexadecimal[i] != '0' && first_digit == 0)
 			first_digit = 1;
-
 		if (first_digit)
 		{
 			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
