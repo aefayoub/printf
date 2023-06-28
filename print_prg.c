@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * print_prg - Writes the character '%' to the buffer.
  * @a: Unused argument (to match the function pointer signature).

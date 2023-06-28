@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdint.h>
 #include <stdio.h>
 /**
  * print_add - prints the address of an input variable
