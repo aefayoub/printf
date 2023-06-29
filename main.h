@@ -24,12 +24,9 @@ int print_oct(va_list arguments, char *buf, unsigned int ibuf);
 int print_hex(va_list arguments, char *buf, unsigned int ibuf);
 int print_upx(va_list arguments, char *buf, unsigned int ibuf);
 int print_usr(va_list arguments, char *buf, unsigned int ibuf);
-<<<<<<< HEAD
 int print_add(va_list arguments, char *buf, unsigned int ibuf);
 int prinlint(va_list arguments, char *buf, unsigned int ibuf);
 int print_buf(char *buf, unsigned int nbuf);
-=======
->>>>>>> 3b6a3f1217c3b5bc692596f002a9e109d07664d0
 int print_prg(va_list __attribute__((unused)), char *, unsigned int);
 int print_chr(va_list arguments, char *buf, unsigned int ibuf);
 int print_str(va_list arguments, char *buf, unsigned int ibuf);
