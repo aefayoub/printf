@@ -14,7 +14,8 @@ int ev_print_func(const char *s, int index)
 		{"#i", print_int},{"#d", print_int},{"+o", print_oct},
 		{" o", print_oct},{"#u", print_unt},{"+u", print_unt},
 		{" u", print_unt},{"+x", print_hex},{" x", print_hex},
-		{"+X", print_upx},{" X", print_upx},
+		{"+X", print_upx},{" X", print_upx},{"S", print_usr},
+		{"p", print_add},
 		{NULL, NULL},
 	};
 	int i = 0, j = 0, first_index;
