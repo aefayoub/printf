@@ -12,6 +12,13 @@ int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int)
 		{"i", print_int}, {"d", print_int},
 		{"b", print_bnr}, {"u", print_unt},
 		{"o", print_oct}, {"x", print_hex},
+<<<<<<< HEAD
+=======
+		{"#i", print_int}, {"#d", print_int},
+		{"#u", print_unt},{"+u", print_unt},
+		{" u", print_unt},
+		
+>>>>>>> 2b3a59b6009ed4bd921bf9e91be2366e26012d99
 	};
 	int i = 0, j = 0, first_index;
 
